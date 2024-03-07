@@ -23,7 +23,7 @@
 
 Подготовка
 ------
-
+Введите следующие команды
 ```
 git clone https://github.com/timoshenkost/rishat_test
 cd rishat_test
@@ -32,7 +32,7 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-Создайте в корне проекта .env и запишите следующие поля:
+Создайте в папке rishat_test .env и запишите следующие поля:
 ```
 DEBUG=True
 ALLOWED_HOSTS=localhost 127.0.0.1
