@@ -46,7 +46,7 @@ STRIPE_SECRET_KEY = Ваш STRIPE_SECRET_KEY с сайта https://dashboard.str
 python manage.py migrate
 ```
 
-#### Для админ панели:
+Для использования админ панели:
 ```
 python manage.py createsuperuser
 ```
