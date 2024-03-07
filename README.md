@@ -24,17 +24,13 @@
 ------
 
 Создайте в корне проекта .env и запишите следующие поля:
-
+```
 DEBUG=True
-
 ALLOWED_HOSTS=localhost 127.0.0.1
-
 SECRET_KEY = Ваш SECRET_KEY
-
 STRIPE_PUBLIC_KEY = Ваш STRIPE_PUBLIC_KEY с сайта https://dashboard.stripe.com/apikeys после регистрации
-
 STRIPE_SECRET_KEY = Ваш STRIPE_SECRET_KEY с сайта https://dashboard.stripe.com/apikeys после регистрации
-
+```
 
 Запуск
 ------
