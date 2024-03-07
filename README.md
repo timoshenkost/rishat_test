@@ -32,7 +32,7 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-Создайте в папке rishat_test .env и запишите следующие поля:
+Создайте в корне rishat_test файл '.env' и запишите следующие поля:
 ```
 DEBUG=True
 ALLOWED_HOSTS=localhost 127.0.0.1
