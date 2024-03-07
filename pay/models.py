@@ -14,8 +14,8 @@ class Item(models.Model):
     price = models.DecimalField(verbose_name='Цена', max_digits=9, decimal_places=2)
 
     class Meta:
-        verbose_name = 'Продукт'
-        verbose_name_plural = 'Продукты'
+        verbose_name = 'Товар'
+        verbose_name_plural = 'Товары'
 
     def __str__(self):
         return self.name
