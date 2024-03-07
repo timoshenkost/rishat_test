@@ -64,9 +64,9 @@ docker run --name rishat_test_container -p 8000:8000 rishat_test
 
 
 * `admin/` - Админка
+* `item/<item_id>` - Информация о товаре по id 
 * `buy/<item_id>` - Покупка по id через Stripe Payment Inten
-* `item/<item_id>` - Отдаёт информацию о товаре по id 
-* `order/<slug>` - Отдаёт информацию о заказе по slug
+* `order/<slug>` - Информация о заказе по slug
 * `buy_order/<slug>` - Покупка заказа по slug через Stripe Session
 
 
