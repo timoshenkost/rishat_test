@@ -71,7 +71,7 @@ class Order(models.Model):
     items = models.ManyToManyField(Item, verbose_name='Продукты')
     description = models.TextField(verbose_name='Описание')
 
-    discount = models.ForeignKey(Discount, null=True, blank=True, on_delete=models.SET_NULL)
+    discount = models.ForeignKey(Discount, verbose_name='Скидка', null=True, blank=True, on_delete=models.SET_NULL)
     taxes = models.ManyToManyField(Tax, verbose_name='Налоги', blank=True)
 
     class Meta:
