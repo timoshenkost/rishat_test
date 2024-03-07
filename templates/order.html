@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buy {{ order.name }}</title>
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+  <body>
+    <h1>{{ order.name }}</h1>
+
+    <p>Description of {{ order.name }}</p>
+    <p>{{ order.description }}</p>
+
+    <h2>Includes:</h2>
+    <ul class="table">
+    {% for item in order.items %}
+        <li class="table-item">
+        <a href="{{ item.get_absolute_url }}">{{ item.name }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <button id="buy-button">Buy</button>
+    <script type="text/javascript">
+      var stripe = Stripe('{{ stripe_key }}');
+      var buyButton = document.getElementById('buy-button');
+      buyButton.addEventListener('click', function() {
+        // Create a new Checkout Session using the server-side endpoint
+        // Redirect to Stripe Session Checkout
+        fetch('/buy_order/{{ order.slug }}', {method: 'GET'})
+        .then(response => response.json())
+        .then(session => stripe.redirectToCheckout({ sessionId: session.id }))
+      });
+    </script>
+  </body>
+</html>

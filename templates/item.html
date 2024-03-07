@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buy {{ item.name }}</title>
+  </head>
+  <body>
+    <h1>{{ item.name }}</h1>
+    <p>Description of {{ item.name }}</p>
+    <p>{{ item.description }}</p>
+    <button id="сonfirm-button">Confirm purchase</button>
+
+    <script type="text/javascript">
+        document.getElementById("сonfirm-button").addEventListener("click", function() {
+            window.location.href = '/buy/{{ item.id }}';
+        });
+    </script>
+  </body>
+</html>

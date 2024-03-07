@@ -1,0 +1,6 @@
+/db.sqlite3
+/Lib/
+/Scripts/
+/pyvenv.cfg
+.idea
+/.env

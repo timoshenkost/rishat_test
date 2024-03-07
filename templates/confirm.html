@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm buy</title>
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+  <body>
+  <h1>Confirm buy</h1>
+  <h2>{{ item_price }} USD</h2>
+    <form id="payment-form">
+        {% csrf_token %}
+        <div id="card-element"></div>
+        <button id="buy-button">Buy</button>
+    </form>
+
+    <script type="text/javascript">
+        var stripe = Stripe('{{ stripe_key }}');
+        var clientSecret = '{{ client_secret }}';
+
+        // Create elements for entering card data
+        var elements = stripe.elements();
+        var cardElement = elements.create('card');
+        cardElement.mount('#card-element');
+
+        // Set up a buy button to submit the form
+        document.getElementById('buy-button').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            stripe.confirmCardPayment(clientSecret, {
+                payment_method: {
+                    card: cardElement
+                }
+            }).then(function(result) {
+                if (result.error) {
+                    console.error(result.error.message);
+                } else {
+                    window.location.href = '/success';
+                }
+            });
+        });
+    </script>
+  </body>
+</html>
