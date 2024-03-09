@@ -28,7 +28,8 @@
 git clone https://github.com/timoshenkost/rishat_test
 cd rishat_test
 python -m venv venv
-.\venv\Scripts\activate
+source venv/bin/activate  # для Linux/Mac
+venv\Scripts\activate  # для Windows
 pip install -r requirements.txt
 ```
 
