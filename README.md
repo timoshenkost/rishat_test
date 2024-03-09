@@ -60,6 +60,8 @@ docker build -t rishat_test .
 docker run --name rishat_test_container -p 8000:8000 rishat_test
 ```
 
+Проект будет доступен по адресу http://localhost:8000/
+ 
 Сервис
 ------
 
