@@ -4,3 +4,4 @@
 /pyvenv.cfg
 .idea
 /.env
+**/__pycache__/
