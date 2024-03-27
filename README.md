@@ -20,10 +20,20 @@
 * Реализовать не Stripe Session, а Stripe Payment Intent.
 
 
+
 Подготовка
 ------
+Введите следующие команды
+```
+git clone https://github.com/timoshenkost/rishat_test
+cd rishat_test
+python -m venv venv
+source venv/bin/activate  # для Linux/Mac
+venv\Scripts\activate  # для Windows
+pip install -r requirements.txt
+```
 
-Создайте в корне проекта .env и запишите следующие поля:
+Создайте в корне rishat_test файл `.env` и запишите следующие поля:
 ```
 DEBUG=True
 ALLOWED_HOSTS=localhost 127.0.0.1
@@ -32,20 +42,12 @@ STRIPE_PUBLIC_KEY = Ваш STRIPE_PUBLIC_KEY с сайта https://dashboard.str
 STRIPE_SECRET_KEY = Ваш STRIPE_SECRET_KEY с сайта https://dashboard.stripe.com/apikeys после регистрации
 ```
 
-Запуск
-------
-
+Настройка базы данных
 ```
-git clone https://github.com/timoshenkost/rishat_test
-cd rishat_test
-python -m venv venv
-.\venv\Scripts\activate
-pip install -r requirements.txt
 python manage.py migrate
-python manage.py runserver
 ```
 
-#### Для админ панели:
+Для использования админ панели:
 ```
 python manage.py createsuperuser
 ```
@@ -58,7 +60,8 @@ docker build -t rishat_test .
 docker run --name rishat_test_container -p 8000:8000 rishat_test
 ```
 
-
+Проект будет доступен по адресу http://localhost:8000/
+ 
 Сервис
 ------
 
@@ -67,6 +70,6 @@ docker run --name rishat_test_container -p 8000:8000 rishat_test
 * `item/<item_id>` - Информация о товаре по id 
 * `buy/<item_id>` - Покупка по id через Stripe Payment Inten
 * `order/<slug>` - Информация о заказе по slug
-* `buy_order/<slug>` - Покупка заказа по slug через Stripe Session
+* `buy_order/<slug>` - Получить индефикатор сессии для Stripe Session
 
 
